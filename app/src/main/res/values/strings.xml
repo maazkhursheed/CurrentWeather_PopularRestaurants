@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CC Test Application</string>
+    <string name="weather_image">Weather Image Resource</string>
+</resources>

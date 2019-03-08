@@ -1,0 +1,139 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:background="#FCDAB0" >
+
+    <TextView
+        android:id="@+id/cityText"
+        android:text="Dubai,AE"
+        android:textColor="#5B4224"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"/>
+
+    <Button
+        android:id="@+id/rest_btn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Popular Restaurants"
+        android:textColor="#ffffff"
+        android:textSize="8sp"
+        android:textAllCaps="false"
+        android:background="@drawable/roundedbutton"
+        android:layout_toRightOf="@id/cityText"
+        android:layout_toEndOf="@+id/cityText"
+        android:layout_marginLeft="15dp"
+        android:layout_marginStart="15dp"/>
+
+    <ImageView
+        android:id="@+id/condIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/cityText" />
+
+    <TextView
+        android:id="@+id/condDescr"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/condIcon"
+        android:layout_alignLeft="@id/condIcon"
+        android:layout_alignStart="@+id/condIcon"
+        />
+
+    <TextView
+        android:id="@+id/temp"
+        style="@style/tempStyle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        android:layout_alignBaseline="@id/condDescr"
+        android:layout_toRightOf="@id/condDescr"
+        android:layout_toEndOf="@+id/condDescr"/>
+
+    <TextView
+        android:id="@+id/pressLab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/condDescr"
+        android:text="Pressure"
+        android:textColor="#8C6639"
+        android:layout_marginTop="15dp" />
+
+    <TextView
+        android:id="@+id/press"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/pressLab"
+        android:layout_toRightOf="@id/pressLab"
+        android:layout_toEndOf="@id/pressLab"
+        style="@style/valData"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"/>
+
+    <TextView
+        android:id="@+id/humLab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/pressLab"
+        android:text="Humidity"
+        android:textColor="#8C6639"/>
+
+    <TextView
+        android:id="@+id/hum"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/humLab"
+        android:layout_toRightOf="@id/humLab"
+        android:layout_toEndOf="@id/humLab"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        style="@style/valData"/>
+
+    <TextView
+        android:id="@+id/windLab"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@id/humLab"
+        android:text="Wind"
+        android:textColor="#8C6639"/>
+
+    <TextView
+        android:id="@+id/windSpeed"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/windLab"
+        android:layout_toRightOf="@id/windLab"
+        android:layout_toEndOf="@id/windLab"
+        android:layout_marginLeft="12dp"
+        android:layout_marginStart="12dp"
+        style="@style/valData" />
+
+    <TextView
+        android:id="@+id/windDeg"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@id/windLab"
+        android:layout_toRightOf="@id/windSpeed"
+        android:layout_toEndOf="@+id/windSpeed"
+        android:layout_marginLeft="4dp"
+        android:layout_marginStart="4dp"
+        style="@style/valData"/>
+
+</RelativeLayout>
