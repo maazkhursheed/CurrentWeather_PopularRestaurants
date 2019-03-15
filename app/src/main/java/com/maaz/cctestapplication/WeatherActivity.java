@@ -18,6 +18,9 @@ import com.maaz.cctestapplication.utils.JSONWeatherParser;
 
 import org.json.JSONException;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
+
 public class WeatherActivity extends AppCompatActivity {
 
     private TextView cityText;
@@ -25,8 +28,8 @@ public class WeatherActivity extends AppCompatActivity {
     private TextView temp;
     private TextView press;
     private TextView windSpeed;
-    private TextView windDeg;
     private TextView hum;
+    private TextView currentDay;
     private ImageView imgView;
     private Button nearestRestBtn;
 
@@ -47,7 +50,8 @@ public class WeatherActivity extends AppCompatActivity {
         hum = (TextView) findViewById(R.id.hum);
         press = (TextView) findViewById(R.id.press);
         windSpeed = (TextView) findViewById(R.id.windSpeed);
-        windDeg = (TextView) findViewById(R.id.windDeg);
+//        windDeg = (TextView) findViewById(R.id.windDeg);
+        currentDay = (TextView) findViewById(R.id.currentday);
         imgView = (ImageView) findViewById(R.id.condIcon);
         nearestRestBtn = (Button)findViewById(R.id.rest_btn);
 
@@ -82,13 +86,19 @@ public class WeatherActivity extends AppCompatActivity {
 
             cityText.setText(weather.location.getCity() + "," + weather.location.getCountry());
             condDescr.setText(weather.currentCondition.getCondition() + "(" + weather.currentCondition.getDescr() + ")");
-            temp.setText("" + Math.round((weather.temperature.getTemp() - 273.15)) + "�C");
+            temp.setText("" + Math.round((weather.temperature.getTemp() - 273.15)));
             hum.setText("" + weather.currentCondition.getHumidity() + "%");
-            press.setText("" + weather.currentCondition.getPressure() + " hPa");
-            windSpeed.setText("" + weather.wind.getSpeed() + " mps");
-            windDeg.setText("" + weather.wind.getDeg() + "�");
-
+            press.setText("" + weather.currentCondition.getPressure() + "%");
+            windSpeed.setText("" + weather.wind.getSpeed() + "km/h");
+//            windDeg.setText("" + weather.wind.getDeg() + "°");
+            currentDay.setText("" + getCurrentDay());
         }
+    }
+
+    private String getCurrentDay() {
+        SimpleDateFormat sdf = new SimpleDateFormat("EEEE");
+        Date d = new Date();
+        return sdf.format(d);
     }
 
     private class RestaurantListner implements View.OnClickListener {

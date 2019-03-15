@@ -1,24 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<selector xmlns:android="http://schemas.android.com/apk/res/android" >
-    <item android:state_pressed="true" >
-        <shape android:shape="rectangle"  >
-            <corners android:radius="3dip" />
-            <stroke android:width="1dip" android:color="#CDA16A" />
-            <gradient android:angle="-90" android:startColor="#CDA16A" android:endColor="#CDA16A"  />
-        </shape>
-    </item>
-    <item android:state_focused="true">
-        <shape android:shape="rectangle"  >
-            <corners android:radius="3dip" />
-            <stroke android:width="1dip" android:color="#CDA16A" />
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item>
+        <shape android:shape="rectangle">
             <solid android:color="#CDA16A"/>
-        </shape>
-    </item>
-    <item >
-        <shape android:shape="rectangle"  >
-            <corners android:radius="3dip" />
-            <stroke android:width="1dip" android:color="#CDA16A" />
-            <gradient android:angle="-90" android:startColor="#CDA16A" android:endColor="#CDA16A" />
+            <stroke android:color="#CDA16A" android:width="2dp" />
+            <!--corners allow us to make the rounded corners button-->
+            <corners android:radius="15dp" />
         </shape>
     </item>
 </selector>

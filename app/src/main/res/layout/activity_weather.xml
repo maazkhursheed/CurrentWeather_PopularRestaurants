@@ -1,4 +1,5 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -6,134 +7,97 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    android:background="#FCDAB0" >
+    android:background="#FCDAB0"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
 
     <TextView
         android:id="@+id/cityText"
-        android:text="Dubai,AE"
+        android:text="Dubai"
         android:textColor="#5B4224"
-        android:textStyle="bold"
-        android:textSize="30sp"
+        android:textSize="40sp"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"/>
+        android:layout_height="wrap_content" />
 
-    <Button
-        android:id="@+id/rest_btn"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Popular Restaurants"
-        android:textColor="#ffffff"
-        android:textSize="8sp"
-        android:textAllCaps="false"
-        android:background="@drawable/roundedbutton"
-        android:layout_toRightOf="@id/cityText"
-        android:layout_toEndOf="@+id/cityText"
-        android:layout_marginLeft="15dp"
-        android:layout_marginStart="15dp"/>
+        <Button
+            android:id="@+id/rest_btn"
+            android:layout_width="140dp"
+            android:layout_height="40dp"
+            android:gravity="center"
+            android:background="@drawable/roundedbutton"
+            android:text="Popular Restaurants"
+            android:textAllCaps="true"
+            android:textColor="#ffffff"
+            android:textSize="10sp"
+            android:layout_gravity="center|end"
+            android:layout_marginLeft="30dp"
+            android:layout_marginStart="30dp"/>
 
-    <ImageView
-        android:id="@+id/condIcon"
+    </LinearLayout>
+
+
+
+    <TextView
+        android:id="@+id/currentday"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@id/cityText" />
+        android:text=" Sunday"
+        android:textSize="15sp"/>
+
 
     <TextView
         android:id="@+id/condDescr"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/condIcon"
-        android:layout_alignLeft="@id/condIcon"
-        android:layout_alignStart="@+id/condIcon"
-        />
+        android:text=" Clear with periodic clouds"
+        android:textSize="12sp"
+        android:layout_marginTop="5dp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="40dp">
+
+    <ImageView
+        android:id="@+id/condIcon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/weather"/>
 
     <TextView
         android:id="@+id/temp"
         style="@style/tempStyle"
+        android:text="37"
+        android:textSize="80sp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp"
-        android:layout_alignBaseline="@id/condDescr"
-        android:layout_toRightOf="@id/condDescr"
-        android:layout_toEndOf="@+id/condDescr"/>
+        android:layout_marginStart="12dp" />
 
-    <TextView
-        android:id="@+id/pressLab"
-        android:layout_width="wrap_content"
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="°C|°F"
+            style="@style/tempStyle"
+            android:textSize="20sp"  />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@id/condDescr"
-        android:text="Pressure"
-        android:textColor="#8C6639"
-        android:layout_marginTop="15dp" />
+        android:layout_marginTop="60dp">
 
-    <TextView
-        android:id="@+id/press"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@id/pressLab"
-        android:layout_toRightOf="@id/pressLab"
-        android:layout_toEndOf="@id/pressLab"
-        style="@style/valData"
-        android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp"/>
+    <include layout="@layout/weather_child"/>
 
-    <TextView
-        android:id="@+id/humLab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@id/pressLab"
-        android:text="Humidity"
-        android:textColor="#8C6639"/>
+    </LinearLayout>
 
-    <TextView
-        android:id="@+id/hum"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@id/humLab"
-        android:layout_toRightOf="@id/humLab"
-        android:layout_toEndOf="@id/humLab"
-        android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp"
-        style="@style/valData"/>
-
-    <TextView
-        android:id="@+id/windLab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_below="@id/humLab"
-        android:text="Wind"
-        android:textColor="#8C6639"/>
-
-    <TextView
-        android:id="@+id/windSpeed"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@id/windLab"
-        android:layout_toRightOf="@id/windLab"
-        android:layout_toEndOf="@id/windLab"
-        android:layout_marginLeft="12dp"
-        android:layout_marginStart="12dp"
-        style="@style/valData" />
-
-    <TextView
-        android:id="@+id/windDeg"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignBaseline="@id/windLab"
-        android:layout_toRightOf="@id/windSpeed"
-        android:layout_toEndOf="@+id/windSpeed"
-        android:layout_marginLeft="4dp"
-        android:layout_marginStart="4dp"
-        style="@style/valData"/>
-
-</RelativeLayout>
+</LinearLayout>
